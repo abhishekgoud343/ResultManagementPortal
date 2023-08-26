@@ -127,7 +127,7 @@ public class AdminLogin extends javax.swing.JFrame {
         char[] password_str = password.getPassword();
 
         //SQL
-        String user = "root"; ////replace the string value with your MySQL server username
+        String user = "root"; //replace the string value with your MySQL server username
         String pwd = "password"; //replace the string value with your MySQL server password
         String db = "srms";
 
