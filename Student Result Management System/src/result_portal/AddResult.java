@@ -256,24 +256,34 @@ public class AddResult extends javax.swing.JFrame {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                stmt = con.prepareStatement("INSERT INTO result(`Roll No`, English, Physics, Math, Chemistry, `Engg. Mech`, DBMS) VALUES(?, ?, ?, ?, ?, ?, ?);");
+                stmt = con.prepareStatement("SELECT * FROM result WHERE `Roll No` = ?");
                 stmt.setString(1, roll);
-                stmt.setString(2, english);
-                stmt.setString(3, physics);
-                stmt.setString(4, math);
-                stmt.setString(5, chem);
-                stmt.setString(6, engg_mech);
-                stmt.setString(7, dbms);
-                stmt.executeUpdate();
 
-                JOptionPane.showMessageDialog(this, "Marks saved successfully", "Success!", JOptionPane.INFORMATION_MESSAGE);
-                
-                AddResult app = new AddResult();
-                app.setExtendedState(this.getExtendedState());
-                app.setLocation(this.getLocation());
-                
-                this.setVisible(false);
-                app.setVisible(true);
+                rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(this, "Records already exist for this roll number", "Existing records found", JOptionPane.WARNING_MESSAGE);
+                }
+                else {
+                    stmt = con.prepareStatement("INSERT INTO result(`Roll No`, English, Physics, Math, Chemistry, `Engg. Mech`, DBMS) VALUES(?, ?, ?, ?, ?, ?, ?);");
+                    stmt.setString(1, roll);
+                    stmt.setString(2, english);
+                    stmt.setString(3, physics);
+                    stmt.setString(4, math);
+                    stmt.setString(5, chem);
+                    stmt.setString(6, engg_mech);
+                    stmt.setString(7, dbms);
+                    stmt.executeUpdate();
+
+                    JOptionPane.showMessageDialog(this, "Marks saved successfully", "Success!", JOptionPane.INFORMATION_MESSAGE);
+
+                    AddResult app = new AddResult();
+                    app.setExtendedState(this.getExtendedState());
+                    app.setLocation(this.getLocation());
+
+                    this.setVisible(false);
+                    app.setVisible(true);
+                }
             }
             else {
                 JOptionPane.showMessageDialog(this, "This roll number is not registered", "Invalid Details", JOptionPane.WARNING_MESSAGE);
