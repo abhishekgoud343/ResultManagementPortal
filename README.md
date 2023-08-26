@@ -16,7 +16,7 @@ The web application has the following primary features:
 2. Download the ```MySQL Connector``` archive file from [here](https://dev.mysql.com/downloads/connector/j/) and extract it. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the extracted folder as source for the library. (Alternatively, the jar file is also provided in the dependencies folder at [```/dependencies/mysql-connector-j-8.0.33.jar```](https://github.com/abhishekgoud343/ResultManagementPortal/blob/main/Student%20Result%20Management%20System/dependencies/mysql-connector-j-8.0.33.jar).)  
 3. In all the java files of the project (except for the one at ```/src/result_portal/Index.java```), add the username and password of your MySQL server (as indicated in the comments of the programs), so that a connection to the database can be established when the application is executed.  
 4. Add the ```rs2xml.jar``` (provided in the ```/dependencies``` folder; or download from [here](https://sourceforge.net/projects/finalangelsanddemons/files/rs2xml.jar/download), for example) as a java library in the project; select the jar file as source for the library.  
-5. Run the java file at the location ```/src/result_portal/Index.java```. This file contains the main function and therefore the project can be executed by running the program in the specified file.  
+5. Run the java file at the location ```/src/result_portal/Index.java```. This file contains the _main_ function that instantiates the application and therefore the project can be executed by running the specified program file.  
 6. The application will load in a new window.
 
 ### Note:
