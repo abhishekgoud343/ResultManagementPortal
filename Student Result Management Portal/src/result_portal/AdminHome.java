@@ -300,23 +300,33 @@ public class AdminHome extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
 
-            stmt = con.prepareStatement("INSERT INTO student(`Roll No`, Course, Branch, Name, Gender, `Father's Name`) VALUES(?, ?, ?, ?, ?, ?);");
+            stmt = con.prepareStatement("SELECT * FROM student WHERE `Roll No` = ?");
             stmt.setString(1, roll);
-            stmt.setString(2, course);
-            stmt.setString(3, branch);
-            stmt.setString(4, name);
-            stmt.setString(5, gender);
-            stmt.setString(6, fatherName);
-            stmt.executeUpdate();
 
-            JOptionPane.showMessageDialog(this, "Data saved successfully", "Success!", JOptionPane.INFORMATION_MESSAGE);
-            
-            AdminHome app = new AdminHome();
-            app.setExtendedState(this.getExtendedState());
-            app.setLocation(this.getLocation());
-            
-            this.setVisible(false);
-            app.setVisible(true);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(this, "Records already exist for this roll number", "Existing records found", JOptionPane.WARNING_MESSAGE);
+            }
+            else {
+                stmt = con.prepareStatement("INSERT INTO student(`Roll No`, Course, Branch, Name, Gender, `Father's Name`) VALUES(?, ?, ?, ?, ?, ?);");
+                stmt.setString(1, roll);
+                stmt.setString(2, course);
+                stmt.setString(3, branch);
+                stmt.setString(4, name);
+                stmt.setString(5, gender);
+                stmt.setString(6, fatherName);
+                stmt.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Data saved successfully", "Success!", JOptionPane.INFORMATION_MESSAGE);
+
+                AdminHome app = new AdminHome();
+                app.setExtendedState(this.getExtendedState());
+                app.setLocation(this.getLocation());
+
+                this.setVisible(false);
+                app.setVisible(true);
+            }
         }
         catch(Exception e) {
             if (e instanceof SQLException) JOptionPane.showMessageDialog(this, e.toString(), "SQL Error", JOptionPane.ERROR_MESSAGE);
