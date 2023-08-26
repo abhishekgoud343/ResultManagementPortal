@@ -5,12 +5,22 @@ The web application has the following primary features:
   ### 1. Result portal for students:
   Students can view their exam results by entering their roll number in the student section of the application.
   ### 2. Student results and records management portal for administrators:
-  Administrators can view and modify the results and records of students. This includes adding details of new students as well as new result records.
+  Administrators can view and modify the results and other data of students. This includes adding details of new students as well as new result records.
 
 ## Instructions to run the Project locally
-1. Open the project folder (```SearchEngine```) in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
-2. Download the ```MySQL Connector``` archive file from [here](https://dev.mysql.com/downloads/connector/j/) and extract it. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the extracted folder as source for the library. Alternately, the jar file is also provided in the dependencies folder at .  
-3. In all the java files of the project (except for the one at ```/src/result_portal/Index.java```), add the username and password of your MySQL server to establish a connection to the database (as indicated in the comments of the programs).  
-4. Add the provided ```rs2xml.jar``` (or download from [here](https://sourceforge.net/projects/finalangelsanddemons/files/rs2xml.jar/download), for example) as a java library in the project; select the jar file as source for the library.  
-5. Run the java file at the location ```/src/result_portal/Index.java```. This file contains the main function and therefore the project can be thus run by running the program in the specified file.  
+### Setting up MySQL database
+  Create a MySQL database and tables to store the student data and the admin login credentials. The SQL commands used for creating the MySQL database for this project are provided in the sql file [```SRMS_SQL_commands.sql```](https://github.com/abhishekgoud343/ResultManagementPortal/blob/main/SRMS_SQL_commands.sql). Using different attributes, table names etc in the database, than those in the ```SRMS_SQL_commands.sql``` file, would require making corresponding modifications in the project code.
+### Executing the application
+1. Open the project folder (```Student Result Management System```) in any IDE or code editor such as IntelliJ IDEA, VS Code, Eclipse etc.  
+2. Download the ```MySQL Connector``` archive file from [here](https://dev.mysql.com/downloads/connector/j/) and extract it. Install  the ```mysql-connector``` library as a java library in the project; select the jar file from the extracted folder as source for the library. (Alternatively, the jar file is also provided in the dependencies folder at [```/dependencies/mysql-connector-j-8.0.33.jar```](https://github.com/abhishekgoud343/ResultManagementPortal/blob/main/Student%20Result%20Management%20System/dependencies/mysql-connector-j-8.0.33.jar).)  
+3. In all the java files of the project (except for the one at ```/src/result_portal/Index.java```), add the username and password of your MySQL server (as indicated in the comments of the programs), so that a connection to the database can be established when the application is executed.  
+4. Add the ```rs2xml.jar``` (provided in the ```/dependencies``` folder; or download from [here](https://sourceforge.net/projects/finalangelsanddemons/files/rs2xml.jar/download), for example) as a java library in the project; select the jar file as source for the library.  
+5. Run the java file at the location ```/src/result_portal/Index.java```. This file contains the main function and therefore the project can be executed by running the program in the specified file.  
 6. The application will load in a new window.
+
+### Note:
+The provided executable [jar file](https://github.com/abhishekgoud343/ResultManagementPortal/blob/main/ResultsPortal.jar) of the _Results Portal_ application is based on the following MySQL server credentials:
+1. username: ```root```
+2. password: ```password```  
+
+As such, the _jar_ application would function properly only if your MySQL server has the same credentials as above.
