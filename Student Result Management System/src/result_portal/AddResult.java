@@ -238,7 +238,7 @@ public class AddResult extends javax.swing.JFrame {
         }
         
         //SQL
-        String user = "root"; ////replace the string value with your MySQL server username
+        String user = "root"; //replace the string value with your MySQL server username
         String pwd = "password"; //replace the string value with your MySQL server password
         String db = "srms";
 
