@@ -120,7 +120,7 @@ public class StudentLogin extends javax.swing.JFrame {
         String roll = rollno.getText();
         
         //SQL
-        String user = "root"; ////replace the string value with your MySQL server username
+        String user = "root"; //replace the string value with your MySQL server username
         String pwd = "password"; //replace the string value with your MySQL server password
         String db = "srms";
 
