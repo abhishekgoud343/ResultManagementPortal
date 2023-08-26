@@ -380,7 +380,7 @@ public class StudentHome extends javax.swing.JFrame {
         String rollno = jTextField4.getText();
         
         //SQL
-        String user = "root"; ////replace the string value with your MySQL server username
+        String user = "root"; //replace the string value with your MySQL server username
         String pwd = "password"; //replace the string value with your MySQL server password
         String db = "srms";
 
