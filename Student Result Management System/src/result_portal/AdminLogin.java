@@ -1,5 +1,6 @@
 package result_portal;
 
+import java.awt.*;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
@@ -30,19 +31,19 @@ public class AdminLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setBackground(new java.awt.Color(102, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", Font.BOLD | Font.ITALIC, 14)); // NOI18N
         jLabel1.setText("Username");
         jLabel1.setOpaque(true);
 
         jLabel2.setBackground(new java.awt.Color(102, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", Font.BOLD | Font.ITALIC, 14)); // NOI18N
         jLabel2.setText("Password");
         jLabel2.setOpaque(true);
 
-        username.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        username.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         username.addActionListener(this::usernameActionPerformed);
 
-        password.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        password.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         password.addActionListener(this::passwordActionPerformed);
         password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent e){
@@ -53,7 +54,7 @@ public class AdminLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 13)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/login_icon.png")))); // NOI18N
         jButton1.setText("Login");
         jButton1.setMaximumSize(new java.awt.Dimension(100, 40));
@@ -61,7 +62,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jButton1.setPreferredSize(new java.awt.Dimension(100, 40));
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 13)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/back_icon.png")))); // NOI18N
         jButton2.setText("Back");
         jButton2.setMaximumSize(new java.awt.Dimension(100, 40));
@@ -127,17 +128,13 @@ public class AdminLogin extends javax.swing.JFrame {
         char[] password_str = password.getPassword();
 
         //SQL
-        String user = "root"; //replace the string value with your MySQL server username
-        String pwd = "password"; //replace the string value with your MySQL server password
-        String db = "srms";
-
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
+            //Setting up connection to database
+            con = DatabaseConnection.getConnection();
 
             stmt = con.prepareStatement("SELECT username FROM admin_credentials WHERE username = ? AND password = ?;");
             stmt.setString(1, username_str);

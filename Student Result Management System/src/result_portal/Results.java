@@ -1,6 +1,8 @@
 package result_portal;
 
 import net.proteanit.sql.DbUtils;
+
+import java.awt.*;
 import java.sql.*;
 import javax.swing.*;
 
@@ -33,24 +35,24 @@ public class Results extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 500));
 
-        jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton1.setText("Add New Student");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton2.setText("Add Result");
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
-        jButton3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton3.setText("Registered Students");
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setBackground(new java.awt.Color(255, 50, 0));
-        jButton4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton4.setText("All Students Results");
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
-        jButton5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton5.setText("Logout");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
@@ -156,17 +158,13 @@ public class Results extends javax.swing.JFrame {
 
     private void setResultTable() {
         //SQL
-        String user = "root"; //replace the string value with your MySQL server username
-        String pwd = "password"; //replace the string value with your MySQL server password
-        String db = "srms";
-
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
+            //Setting up connection to database
+            con = DatabaseConnection.getConnection();
 
             st = con.createStatement();
             rs = st.executeQuery("SELECT * FROM result ORDER BY `Roll No`;");

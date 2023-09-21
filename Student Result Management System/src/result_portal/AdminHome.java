@@ -1,5 +1,6 @@
 package result_portal;
 
+import java.awt.*;
 import java.sql.*;
 import java.util.Objects;
 import javax.swing.*;
@@ -45,23 +46,23 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 500));
 
         jButton1.setBackground(new java.awt.Color(255, 50, 0));
-        jButton1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton1.setText("Add New Student");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jButton2.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton2.setText("Add Result");
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
-        jButton3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton3.setText("Registered Students");
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
-        jButton4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton4.setText("All Students Results");
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
-        jButton5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton5.setText("Logout");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
@@ -97,32 +98,32 @@ public class AdminHome extends javax.swing.JFrame {
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, jButton2, jButton3, jButton4);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel1.setText("Course");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "B.Tech", "M.Tech", "B.Pharm", "M.Pharm" }));
         jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel2.setText("Branch");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CE", "CSE", "ECE", "EEE", "ME", "IT" }));
         jComboBox2.addActionListener(this::jComboBox2ActionPerformed);
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel3.setText("Name");
 
-        jLabel4.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel4.setText("Gender");
 
-        jLabel5.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel5.setText("Roll number");
 
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
         jTextField2.addActionListener(this::jTextField2ActionPerformed);
 
-        jLabel6.setFont(new java.awt.Font("sansserif", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("sansserif", Font.BOLD, 13)); // NOI18N
         jLabel6.setText("Father's Name");
 
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -136,7 +137,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male", "Other" }));
 
-        jButton6.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jButton6.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/student_save_icon.png")))); // NOI18N
         jButton6.setText("Save");
         jButton6.addActionListener(this::jButton6ActionPerformed);
@@ -289,16 +290,13 @@ public class AdminHome extends javax.swing.JFrame {
         }
         
         //SQL
-        String user = "root"; //replace the string value with your MySQL server username
-        String pwd = "password"; //replace the string value with your MySQL server password
-        String db = "srms";
-
         Connection con = null;
         PreparedStatement stmt = null;
+        ResultSet rs = null;
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
+            //Setting up connection to database
+            con = DatabaseConnection.getConnection();
 
             stmt = con.prepareStatement("SELECT * FROM student WHERE `Roll No` = ?");
             stmt.setString(1, roll);
@@ -334,6 +332,7 @@ public class AdminHome extends javax.swing.JFrame {
         }
         finally {
             try {
+                if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
                 if (con != null) con.close();
             }

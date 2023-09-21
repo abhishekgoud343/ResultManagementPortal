@@ -1,5 +1,6 @@
 package result_portal;
 
+import java.awt.*;
 import java.sql.*;
 import java.util.Objects;
 import javax.swing.*;
@@ -72,73 +73,73 @@ public class StudentHome extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel7.setText("Physics");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel8.setText("Math");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel9.setText("English");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel10.setText("DBMS");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel11.setText("Engg. Mechanics");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel12.setText("Chemistry");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 14)); // NOI18N
         jLabel13.setText("Marks Obtained");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 14)); // NOI18N
         jLabel14.setText("Total Marks");
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 14)); // NOI18N
         jLabel15.setText("Passing Marks");
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 14)); // NOI18N
         jLabel16.setText("Subject");
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 14)); // NOI18N
         jLabel17.setText("Total:");
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel18.setText("100");
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel19.setText("100");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel20.setText("100");
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel21.setText("100");
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel22.setText("100");
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel23.setText("100");
 
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel25.setText("40");
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel26.setText("40");
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel27.setText("40");
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel28.setText("40");
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel29.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel29.setText("40");
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel30.setText("40");
 
         jTextField7.setEditable(false);
@@ -162,7 +163,7 @@ public class StudentHome extends javax.swing.JFrame {
         jTextField13.setEditable(false);
         jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/back_icon_27.png")))); // NOI18N
         jButton1.setText("Back");
         jButton1.setMaximumSize(new java.awt.Dimension(100, 40));
@@ -285,22 +286,22 @@ public class StudentHome extends javax.swing.JFrame {
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel1.setText("Course Name");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel2.setText("Branch Name");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel3.setText("Name");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel4.setText("Roll number");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel5.setText("Gender");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", Font.PLAIN, 13)); // NOI18N
         jLabel6.setText("Father's Name");
 
         jTextField1.setEditable(false);
@@ -380,17 +381,13 @@ public class StudentHome extends javax.swing.JFrame {
         String rollno = jTextField4.getText();
         
         //SQL
-        String user = "root"; //replace the string value with your MySQL server username
-        String pwd = "password"; //replace the string value with your MySQL server password
-        String db = "srms";
-
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
+            //Setting up connection to database
+            con = DatabaseConnection.getConnection();
 
             stmt = con.prepareStatement("SELECT * FROM student join result WHERE student.`Roll No` = ? AND result.`Roll No` = ?;");
             stmt.setString(1, rollno);
@@ -410,7 +407,14 @@ public class StudentHome extends javax.swing.JFrame {
                 jTextField10.setText(rs.getString(13));
                 jTextField11.setText(rs.getString(12));
                 jTextField12.setText(rs.getString(11));
-                
+
+                if (jTextField7.getText().equals("")) jTextField7.setText("0");
+                if (jTextField8.getText().equals("")) jTextField8.setText("0");
+                if (jTextField9.getText().equals("")) jTextField9.setText("0");
+                if (jTextField10.getText().equals("")) jTextField10.setText("0");
+                if (jTextField11.getText().equals("")) jTextField11.setText("0");
+                if (jTextField12.getText().equals("")) jTextField12.setText("0");
+
                 int total = Integer.parseInt(jTextField7.getText()) + Integer.parseInt(jTextField8.getText()) + Integer.parseInt(jTextField9.getText()) + Integer.parseInt(jTextField10.getText()) + Integer.parseInt(jTextField11.getText()) + Integer.parseInt(jTextField12.getText());
                 jTextField13.setText(String.valueOf(total));
             }

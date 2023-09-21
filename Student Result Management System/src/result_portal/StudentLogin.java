@@ -1,5 +1,6 @@
 package result_portal;
 
+import java.awt.*;
 import java.sql.*;
 import java.util.Objects;
 import javax.swing.*;
@@ -28,12 +29,12 @@ public class StudentLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 51));
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("sansserif", Font.BOLD, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Enter your roll number");
         jLabel1.setOpaque(true);
 
-        rollno.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        rollno.setFont(new java.awt.Font("Arial", Font.PLAIN, 14)); // NOI18N
         rollno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         rollno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         rollno.addActionListener(this::rollnoActionPerformed);
@@ -46,7 +47,7 @@ public class StudentLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 13)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/back_icon.png")))); // NOI18N
         jButton2.setText("Back");
         jButton2.setMaximumSize(new java.awt.Dimension(100, 40));
@@ -54,7 +55,7 @@ public class StudentLogin extends javax.swing.JFrame {
         jButton2.setPreferredSize(new java.awt.Dimension(100, 40));
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 13)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/login_icon.png")))); // NOI18N
         jButton1.setText("Submit");
         jButton1.setMaximumSize(new java.awt.Dimension(100, 40));
@@ -120,17 +121,13 @@ public class StudentLogin extends javax.swing.JFrame {
         String roll = rollno.getText();
         
         //SQL
-        String user = "root"; //replace the string value with your MySQL server username
-        String pwd = "password"; //replace the string value with your MySQL server password
-        String db = "srms";
-
         Connection con = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/" + db + "?user=" + user + "&password=" + pwd);
+            //Setting up connection to database
+            con = DatabaseConnection.getConnection();
 
             stmt = con.prepareStatement("SELECT * FROM student WHERE `Roll No` = ?;");
             stmt.setString(1, roll);

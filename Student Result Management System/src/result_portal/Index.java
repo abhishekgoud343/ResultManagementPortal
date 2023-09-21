@@ -1,6 +1,7 @@
 package result_portal;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
 
 /**
@@ -24,12 +25,12 @@ public class Index extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        student.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        student.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 15)); // NOI18N
         student.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/student_icon.png")))); // NOI18N
         student.setText("Student");
         student.addActionListener(this::studentActionPerformed);
 
-        admin.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
+        admin.setFont(new java.awt.Font("Segoe UI", Font.BOLD, 15)); // NOI18N
         admin.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/result_portal/resources/admin_icon.png")))); // NOI18N
         admin.setText("Admin");
         admin.addActionListener(this::adminActionPerformed);
