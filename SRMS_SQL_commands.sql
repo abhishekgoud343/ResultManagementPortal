@@ -12,7 +12,7 @@ CREATE TABLE student(
     `Father's Name` VARCHAR(25)
 );
 
-SELECT * FROM STUDENT;
+SELECT * FROM student;
 
 
 CREATE TABLE result(
@@ -22,7 +22,8 @@ CREATE TABLE result(
     Math VARCHAR(10),
     Chemistry VARCHAR(10),
     `Engg. Mech` VARCHAR(10),
-    DBMS VARCHAR(10)
+    DBMS VARCHAR(10),
+    FOREIGN KEY(`Roll No`) REFERENCES student(`Roll No`)
 );
 
 SELECT * FROM result;
